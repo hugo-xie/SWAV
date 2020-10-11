@@ -120,6 +120,11 @@ parser.add_argument("--sync_bn", type=str, default="pytorch", help="synchronize 
 parser.add_argument("--dump_path", type=str, default=".",
                     help="experiment dump path for checkpoints and log")
 parser.add_argument("--seed", type=int, default=31, help="seed")
+parser.add_argument('--multiprocessing-distributed', action='store_true',
+                    help='Use multi-processing distributed training to launch '
+                         'N processes per node, which has N GPUs. This is the '
+                         'fastest way to use PyTorch for either single node or '
+                         'multi node data parallel training')
 
 def main():
     args = parser.parse_args()
