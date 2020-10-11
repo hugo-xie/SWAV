@@ -133,7 +133,7 @@ def main():
         args.world_size = ngpus_per_node * args.world_size
         mp.spawn(main_worker, nprocs=ngpus_per_node, args=(ngpus_per_node, args))
 
-def main_worker(ngpus_per_node, args):
+def main_worker(gpu, ngpus_per_node, args):
     # global args
     # args = parser.parse_args()
     init_distributed_mode(args, ngpus_per_node)
